@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="header__title"></div>
+    <div class="toggle">
+      <img class="toggle__icon toggle__icon-light" src="../assets/images/icon-sun-dark.svg" alt="">
+      <img class="toggle__icon toggle__icon-dark" src="../assets/images/icon-sun-light.svg" alt="">
+      <div class="toggle__group" tabindex="0">
+        <input class="toggle__checkbox" type="checkbox" hidden class="header__button">
+        <div class="toggle__button"></div>
+      </div>
+      <img class="toggle__icon toggle__icon-light" src="../assets/images/icon-moon-dark.svg" alt="">
+      <img class="toggle__icon toggle__icon-dark" src="../assets/images/icon-moon-light.svg" alt="">
+
+    </div>
+  </header>
+  <main>
+    <section class="home">
+      <div class="home__group">
+        <p class="home__title">Welcome to the Frontend Quiz!</p>
+        <p class="home__description">Pick a subject to get started.</p>
+      </div>
+      <ul class="home__list">
+        <li class="home__button answer"><span class="answer__icon"><img src="../assets/images/icon-css.svg" alt=""></span>HTML</button></li>
+      </ul>
+    </section>
+
+    <section class="quiz display-none">
+      <div class="quiz__content-top">
+        <div class="quiz__title">Question 1 of 10</div>
+        <h3 class="quiz__question">Lorem ipsum dolor sit amet consectetur.</h3>
+        <div class="progress">
+          <div class="progress__current"></div>
+        </div>
+      </div>
+      <div class="quiz__content-bottom">
+        <ul class="quiz__list">
+          <li class="quiz__option answer"><span class="answer__char">A</span> Lorem ipsum dolor sit. <img class="display-none" src="../assets/images/icon-correct.svg" alt=""><img src="../assets/images/icon-error.svg" alt=""></li>
+        </ul>
+        <button class="quiz__submit button button-primary" tabindex="0">Submit</button>
+        <button class="quiz__next button button-primary display-none" tabindex="0">Next question</button>
+      </div>
+    </section>
+
+    <section class="quiz-result display-none">
+      <p class="quiz-result__title">Quiz completed <br> You scored…</p>
+
+      <div class="quiz-result__container">
+        <div class="quiz-result__group">
+          <img class="quiz-result__icon" src="" alt="">
+          <p class="quiz-result__subject">HTML</p>
+        </div>
+
+        <div class="quiz-result__score">4</div>
+        <p class="quiz-result__total">out of 10</p>
+      </div>
+
+      <button class="quiz-result__button button button-primary">Play Again</button>
+    </section>
+
+    <div class="message display-none"><img class="message__icon" src="../assets/images/icon-error.svg" alt="">Please select an answer</div>
+  </main>
+</body>
+<script src="../js/main.js"></script>
+
+</html>

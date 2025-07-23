@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-image: url("../../assets/images/pattern-background-mobile-light.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $background-light;
+
+  &.dark-theme {
+    background-image: url("../../assets/images/pattern-background-mobile-dark.svg");
+    background-color: $background-dark;
+  }
+}
+
+.display-none {
+  display: none !important;
+}

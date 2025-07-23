@@ -1,0 +1,110 @@
+.answer {
+  width: 100%;
+  background-color: $white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  border: 2px solid $white;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0px 16px 40px 0px $shadow-color;
+  user-select: none;
+
+  &__char {
+    background-color: $option-background;
+    padding: 8px 12px;
+    border-radius: 6px;
+  }
+
+  &__icon {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    &.HTML {
+      background-color: $html-bg;
+    }
+    &.CSS {
+      background-color: $css-bg;
+    }
+    &.JavaScript {
+      background-color: $js-bg;
+    }
+    &.Accessibility {
+      background-color: $accessibility-bg;
+    }
+  }
+
+  &__correct,
+  &__wrong {
+    margin-left: auto;
+    display: none;
+  }
+}
+
+body.dark-theme {
+  .answer {
+    border: 2px solid $answer-dark;
+    background-color: $answer-dark;
+    &__char {
+      color: $option-dark;
+    }
+  }
+
+  .select {
+    border: 2px solid $purple;
+    &.answer {
+      .answer__char {
+        background-color: $purple;
+        color: $white;
+      }
+    }
+  }
+}
+
+.select {
+  border: 2px solid $purple;
+}
+
+.border--correct {
+  border: 2px solid $correct-color !important;
+  &.answer {
+    .answer__char {
+      background-color: $correct-color;
+      color: $white;
+    }
+
+    .answer__correct {
+      display: unset;
+    }
+  }
+}
+
+.border--wrong {
+  border: 2px solid $invalid-color !important;
+  &.answer {
+    .answer__char {
+      background-color: $invalid-color;
+      color: $white;
+    }
+    .answer__wrong {
+      display: unset;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .answer {
+    gap: 40px;
+    font-weight: 600;
+    font-size: 26px;
+
+    &__char {
+      padding: 8px 12px;
+    }
+  }
+}

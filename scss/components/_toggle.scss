@@ -1,0 +1,68 @@
+.toggle {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &__group {
+    width: 32px;
+    height: 20px;
+    background-color: $purple;
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: $white;
+    transition: all 0.3s;
+    user-select: none;
+
+    &.on {
+      left: 17px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .toggle {
+    &__icon {
+      width: 30px;
+      height: 30px;
+    }
+
+    &__group {
+      width: 50px;
+      height: 30px;
+      border-radius: 20px;
+    }
+
+    &__button {
+      left: 5px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: $white;
+      transition: all 0.3s;
+      user-select: none;
+
+      &.on {
+        left: 25px;
+      }
+    }
+  }
+}

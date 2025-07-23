@@ -1,0 +1,453 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a,
+li {
+  text-decoration: none;
+  list-style: none;
+}
+
+body {
+  background-image: url("../../assets/images/pattern-background-mobile-light.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #ffffff;
+}
+body.dark-theme {
+  background-image: url("../../assets/images/pattern-background-mobile-dark.svg");
+  background-color: #313e51;
+}
+
+.display-none {
+  display: none !important;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  color: #313e51;
+  font-weight: 400;
+}
+body.dark-theme {
+  color: #fff;
+}
+
+.button {
+  font-weight: 600;
+  font-size: 18px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+  cursor: pointer;
+}
+.button-primary {
+  background-color: #a729f5;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .button {
+    font-size: 30px;
+  }
+}
+.message {
+  color: #ee5454;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.progress {
+  width: 100%;
+  height: 16px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+.progress__current {
+  width: 0;
+  height: 8px;
+  background-color: #a729f5;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.toggle {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.toggle__icon {
+  width: 16px;
+  height: 16px;
+}
+.toggle__group {
+  width: 32px;
+  height: 20px;
+  background-color: #a729f5;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+.toggle__button {
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  transition: all 0.3s;
+  user-select: none;
+}
+.toggle__button.on {
+  left: 17px;
+}
+
+@media (min-width: 768px) {
+  .toggle__icon {
+    width: 30px;
+    height: 30px;
+  }
+  .toggle__group {
+    width: 50px;
+    height: 30px;
+    border-radius: 20px;
+  }
+  .toggle__button {
+    left: 5px;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #ffffff;
+    transition: all 0.3s;
+    user-select: none;
+  }
+  .toggle__button.on {
+    left: 25px;
+  }
+}
+.answer {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: 600;
+  font-size: 18px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+  user-select: none;
+}
+.answer__char {
+  background-color: #f4f6fa;
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.answer__icon {
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.answer__icon.HTML {
+  background-color: #fff1e9;
+}
+.answer__icon.CSS {
+  background-color: #e0fdef;
+}
+.answer__icon.JavaScript {
+  background-color: #ebf0ff;
+}
+.answer__icon.Accessibility {
+  background-color: #f6e7ff;
+}
+.answer__correct, .answer__wrong {
+  margin-left: auto;
+  display: none;
+}
+
+body.dark-theme .answer {
+  border: 2px solid #3b4d66;
+  background-color: #3b4d66;
+}
+body.dark-theme .answer__char {
+  color: #626c7f;
+}
+body.dark-theme .select {
+  border: 2px solid #a729f5;
+}
+body.dark-theme .select.answer .answer__char {
+  background-color: #a729f5;
+  color: #ffffff;
+}
+
+.select {
+  border: 2px solid #a729f5;
+}
+
+.border--correct {
+  border: 2px solid #26d782 !important;
+}
+.border--correct.answer .answer__char {
+  background-color: #26d782;
+  color: #ffffff;
+}
+.border--correct.answer .answer__correct {
+  display: unset;
+}
+
+.border--wrong {
+  border: 2px solid #ee5454 !important;
+}
+.border--wrong.answer .answer__char {
+  background-color: #ee5454;
+  color: #ffffff;
+}
+.border--wrong.answer .answer__wrong {
+  display: unset;
+}
+
+@media (min-width: 768px) {
+  .answer {
+    gap: 40px;
+    font-weight: 600;
+    font-size: 26px;
+  }
+  .answer__char {
+    padding: 8px 12px;
+  }
+}
+.header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__title {
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.header__icon {
+  padding: 4px;
+  border-radius: 10px;
+}
+.header__icon.HTML {
+  background-color: #fff1e9;
+}
+.header__icon.CSS {
+  background-color: #e0fdef;
+}
+.header__icon.JavaScript {
+  background-color: #ebf0ff;
+}
+.header__icon.Accessibility {
+  background-color: #f6e7ff;
+}
+
+.toggle__icon-dark {
+  display: none;
+}
+
+body.dark-theme .toggle__icon-light {
+  display: none;
+}
+body.dark-theme .toggle__icon-dark {
+  display: unset;
+}
+
+@media (min-width: 768px) {
+  .header {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .header__title {
+    font-size: 26px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .header__icon {
+    padding: 4px;
+    border-radius: 10px;
+  }
+}
+@media (min-width: 1400px) {
+  .header {
+    max-width: 1280px;
+  }
+}
+.home {
+  padding: 20px;
+}
+.home__title {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.home__description {
+  font-style: italic;
+  margin-bottom: 40px;
+  color: #626c7f;
+}
+.home__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+body.dark-theme .home__description {
+  color: #abc1e1;
+}
+
+@media (min-width: 768px) {
+  .home {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .home__title {
+    font-size: 70px;
+    margin-bottom: 40px;
+  }
+  .home__description {
+    margin-bottom: 60px;
+    font-size: 20px;
+  }
+}
+@media (min-width: 1400px) {
+  .home {
+    max-width: 1280px;
+    display: flex;
+  }
+  .home__group {
+    width: 50%;
+  }
+  .home__list {
+    width: 50%;
+  }
+}
+.quiz {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.quiz__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.quiz__question {
+  user-select: none;
+}
+.quiz__title {
+  color: #626c7f;
+  font-style: italic;
+}
+.quiz__content-top, .quiz__content-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+body.dark-theme .quiz__title {
+  color: #abc1e1;
+}
+
+@media (min-width: 768px) {
+  .quiz {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .quiz__title {
+    font-size: 20px;
+  }
+  .quiz__question {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1400px) {
+  .quiz {
+    max-width: 1280px;
+    flex-direction: row;
+    gap: 100px;
+  }
+  .quiz__content-top, .quiz__content-bottom {
+    width: 50%;
+  }
+}
+.quiz-result {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.quiz-result__title {
+  font-size: 40px;
+  text-align: center;
+}
+.quiz-result__group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.quiz-result__container {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  box-shadow: 0px 16px 40px 0px rgba(143, 160, 193, 0.14);
+}
+.quiz-result__score {
+  font-size: 100px;
+  font-weight: 600;
+}
+.quiz-result__total {
+  color: #626c7f;
+}
+
+body.dark-theme .quiz-result__container {
+  background-color: #313e51;
+}
+body.dark-theme .quiz-result__total {
+  color: #abc1e1;
+}
+
+@media (min-width: 768px) {
+  .quiz-result {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .quiz-result__title {
+    font-size: 60px;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
