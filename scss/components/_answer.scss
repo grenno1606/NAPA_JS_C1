@@ -70,8 +70,14 @@ body.dark-theme {
   border: 2px solid $purple;
 }
 
+.border-none {
+  border: 2px solid $white;
+  cursor: default;
+}
+
 .border--correct {
   border: 2px solid $correct-color !important;
+  cursor: default;
   &.answer {
     .answer__char {
       background-color: $correct-color;
@@ -86,6 +92,7 @@ body.dark-theme {
 
 .border--wrong {
   border: 2px solid $invalid-color !important;
+  cursor: default;
   &.answer {
     .answer__char {
       background-color: $invalid-color;

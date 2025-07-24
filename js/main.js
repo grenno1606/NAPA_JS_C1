@@ -422,7 +422,11 @@ function validateAnswer(listOption, answer) {
   listOption.forEach((option) => {
     if (option.childNodes[1].textContent == answer)
       option.classList.add("border--correct");
-    else option.classList.add("border--wrong");
+    else {
+      option.classList.add("border-none");
+      if (option.classList.contains("select"))
+        option.classList.add("border--wrong");
+    }
   });
 }
 
@@ -529,6 +533,8 @@ btnNext.addEventListener("click", () => {
     result.classList.remove("display-none");
     const scoreElement = document.querySelector(".quiz-result__score");
     scoreElement.innerHTML = score;
+    const total = document.querySelector(".quiz-result__total");
+    total.innerHTML = `out of ${questions.length}`;
     const titleQuiz = document.querySelector(".quiz-result__group");
     titleQuiz.innerHTML = title.innerHTML;
   } else {
@@ -540,6 +546,7 @@ btnAgain.addEventListener("click", () => {
   result.classList.add("display-none");
   home.classList.remove("display-none");
   score = 0;
+  title.innerHTML = "";
 });
 
 const toggle = document.querySelector(".toggle__group");

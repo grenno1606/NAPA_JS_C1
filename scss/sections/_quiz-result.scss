@@ -59,11 +59,9 @@ body.dark-theme {
     &__title {
       font-size: 60px;
     }
+
+    &__total {
+      font-size: 20px;
+    }
   }
 }
-
-// @media (min-width: 1400px) {
-//   .quiz-result {
-//     max-width: 1280px;
-//   }
-// }
