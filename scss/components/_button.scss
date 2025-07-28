@@ -12,6 +12,15 @@
     background-color: $purple;
     color: $white;
   }
+
+  &:hover {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.5) 0%,
+        rgba(255, 255, 255, 0.5) 100%
+      ),
+      $purple;
+  }
 }
 
 @media (min-width: 768px) {

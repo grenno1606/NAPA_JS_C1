@@ -15,6 +15,7 @@
 
   &__char {
     background-color: $option-background;
+    color: $option-dark;
     padding: 8px 12px;
     border-radius: 6px;
   }
@@ -57,22 +58,32 @@ body.dark-theme {
 
   .select {
     border: 2px solid $purple;
-    &.answer {
-      .answer__char {
-        background-color: $purple;
-        color: $white;
-      }
-    }
+  }
+
+  .border-none {
+    border: 2px solid $answer-dark;
   }
 }
 
 .select {
   border: 2px solid $purple;
+  &.answer {
+    .answer__char {
+      background-color: $purple;
+      color: $white;
+    }
+  }
 }
 
 .border-none {
   border: 2px solid $white;
   cursor: default;
+  &.answer {
+    .answer__char {
+      background-color: $option-background;
+      color: $option-dark;
+    }
+  }
 }
 
 .border--correct {
