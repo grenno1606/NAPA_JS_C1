@@ -423,9 +423,9 @@ function validateAnswer(listOption, answer) {
     if (option.childNodes[1].textContent == answer)
       option.classList.add("border--correct");
     else {
-      option.classList.add("border-none");
-      if (option.classList.contains("select"))
-        option.classList.add("border--wrong");
+      // option.classList.add("border-none");
+      // if (option.classList.contains("select"))
+      option.classList.add("border--wrong");
     }
   });
 }
